@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Encriptador</title>
+</head>
+<body class="grid-layout">
+    <header class="header">
+        <div class="logo" >
+            <a href="https://www.aluracursos.com/" target="_blank"><img src="img/logo-vector.svg" alt="Logo"></a>
+        </div>
+    </header>
+    <main class="main main-grid">
+        <div class="text-input section1">
+            <label>
+                <textarea placeholder="Ingresa el texto aquí" id="input"></textarea>
+            </label>
+        </div>
+        <div class="text-output section2">
+            <div id="output" class=" <div-text text-encrypted-no deactive">
+                <button class="btn-clipboard" type="submit" value="Copiar" onclick="copyToClipboard()">Copiar</button>
+            </div>
+            <div id="ad" class="advice">
+                <p class="advice-big">Ningún mensaje fue encontrado</p>
+                <p class="advice-small">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <div id="btn" class="button-copy-pc deactive">
+                <button class="btn-copy-pc" type="submit" value="Copiar" onclick="copyToClipboard()">Copiar</button>
+            </div>
+        </div>
+        <div class="interaction section3">
+            <div class="interaction-info">
+                <img src="img/info-vector.svg" alt="Información">
+                <p>Sólo letras minúsculas y sin acentos.</p>
+            </div>
+            <div class="buttons">
+                <button value="Encriptar" id="enc" type="submit" onclick="encriptText()">Encriptar</button>
+                <button value="Desencriptar" id="denc" type="submit" onclick="decriptText()">Desencriptar</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="attribution">
+            <p>Challenge by: <a href="https://www.oracle.com/ar/education/oracle-next-education/" target="_blank">Oracle ONE</a>. Coded by: <a target="_blank" href="https://github.com/Alessandrror">Alessandro Rivas</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
