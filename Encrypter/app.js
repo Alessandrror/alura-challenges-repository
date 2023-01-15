@@ -25,24 +25,29 @@ function encriptText() {
 }
 
 function decriptText() {
-    text = '';
-    let text2 = '';
-    let text3 = '';
-    let text4 = '';
-    let text5 = '';
-    let str = document.getElementById('input').value;
-    if (str === '') {
-        siono = 0;
-        validar();
-        return;
+    if(siono){
+        text = '';
+        let text2 = '';
+        let text3 = '';
+        let text4 = '';
+        let text5 = '';
+        let str = document.getElementById('input').value;
+        if (str === '') {
+            siono = 0;
+            validar();
+            return;
+        }
+        else {
+            text5 += str.replaceAll('ai', 'a');
+            text4 = text5.replaceAll('enter', 'e');
+            text3 = text4.replaceAll('imes', 'i');
+            text2 = text3.replaceAll('ober', 'o');
+            text = text2.replaceAll('ufat', 'u');
+            return showText(text);
+        }    
     }
     else {
-        text5 += str.replaceAll('ai', 'a');
-        text4 = text5.replaceAll('enter', 'e');
-        text3 = text4.replaceAll('imes', 'i');
-        text2 = text3.replaceAll('ober', 'o');
-        text = text2.replaceAll('ufat', 'u');
-        return showText(text);
+        return;
     }
 
 }
@@ -54,7 +59,7 @@ function showText() {
         return document.getElementById('txt').innerHTML=text;
     }
     else {
-        document.getElementById('output').insertAdjacentHTML("beforeend",'<textarea id="txt" >'+text+'</textarea>');
+        document.getElementById('output').insertAdjacentHTML("beforeend",'<textarea readonly id="txt" >'+text+'</textarea>');
     }    
 }
 

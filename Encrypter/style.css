@@ -271,7 +271,6 @@ textarea:focus {
     margin: auto;
 
     overflow-y: auto;
-    /* overflow-x: hidden; */
     outline: none;
     background-color: var(--lightblue300);
     border-radius: 1rem;
@@ -468,7 +467,6 @@ textarea:focus {
 @media (min-width: 1025px) {
 
     .grid-layout{
-        /* display: grid; */
         grid-template-areas:
             "header header header" 
             "main   main   main"
@@ -493,7 +491,6 @@ textarea:focus {
     }
 
     .main-grid {
-        /* display: grid; */
         grid-template-areas:
             "section1 section1 section2"
             "section1 section1 section2"
@@ -627,11 +624,12 @@ textarea:focus {
         min-height: min(30rem);
         min-width: min(25rem);
         background-image: url(img/muñeco-vector.svg);
-        background-color: white;
+        background-color: transparent;
         box-shadow: none;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        transition: 500ms ease-in-out;
     }
 
 }
