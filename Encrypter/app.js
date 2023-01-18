@@ -7,8 +7,6 @@ const mayusytildes = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','�
                     'T','U','V','W','X','Y','Z','Á','É','Í','Ó','Ú','À','È','Ì','Ò','Ù','Á','É','Í',
                     'Ó','Ú','Ý','Â','Ê','Î','Ô','Û','Ã','Ẽ','Ĩ','Õ','Ũ','Ä','Ë','Ï','Ö','Ü','Ÿ','Ç'];
 let show = document.getElementById('info');
-let cuerpo = document.getElementById('body');
-let modal = '<div class="bg-modal"></div><div class="modal-abs"><p>&#10004;</p><p>¡Copiado!</p><p>Su selección ha sido copiada en el portapapeles</p></div>';
 
 function encriptText() {
     text = '';
@@ -103,7 +101,7 @@ function copyToClipboard() {
         navigator.clipboard.writeText(content)
             .then(() => {
                 showCopyMessage();
-                // console.log("Text copied to clipboard...");
+                console.log("Text copied to clipboard...");
             })
             .catch(err => {
                 console.log('Something went wrong', err);
@@ -142,14 +140,13 @@ function quitarMensaje() {
 }
 
 function showCopyMessage() {
-    // cuerpo.innerHTML = `${modal}`;
-    cuerpo.appendChild(`${modal}`);
-    cuerpo.classList.add('modal-rel');
+    document.getElementById('body-modal').insertAdjacentHTML("beforeend",'<div id="bgmodals-id" class="bg-modal"></div><div id="modalabs-id" class="modal-abs"><p>&#10004;</p><p>¡Copiado!</p><p>Su selección ha sido copiada en el portapapeles</p></div>');
     setTimeout(quitCopyMessage, 1000);
 }
 
 function quitCopyMessage() {
-    cuerpo.classList.remove('modal-rel')
-    cuerpo.removeChild(`${modal}`);
+    document.getElementById('body-modal').classList.remove('modal-rel')
+    document.getElementById('modalabs-id').remove();
+    document.getElementById('bgmodals-id').remove();
 }
 

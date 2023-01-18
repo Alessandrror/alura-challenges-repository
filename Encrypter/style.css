@@ -361,10 +361,8 @@ textarea:focus {
 
     overflow-y: auto;
     outline: none;
-    /* background-color: var(--lightblue300); */
     background-color: transparent;
     border-radius: 1rem;
-    /* box-shadow: 0 0 1rem 0.5rem var(--lightblue400) inset; */
     resize: none;
 }
 
@@ -864,9 +862,26 @@ textarea:focus {
         background-color: #121212;
     }
 
+    .bg-modal {
+        background-color:var(--lightblue300);
+        opacity: 0.1;
+    }
+
     .modal-abs {
         background-color: #121212;
-        border: 1rem solid white;
+    }
+    
+    .modal-abs p:first-child {
+        color: var(--darkblue100);
+        border: 1rem solid var(--darkblue100);
+    }
+    
+    .modal-abs p:nth-child(2) {
+        color:var(--darkblue100);
+    }
+    
+    .modal-abs p:last-child {
+        color:var(--gray100);
     }
 
     .logo {
