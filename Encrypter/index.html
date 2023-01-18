@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>Encriptador</title>
 </head>
-<body class="grid-layout">
-    <header class="header">
+<body id="body-modal" class="grid-layout">
+    <header class="header header-title">
         <div class="logo" >
             <a href="https://www.aluracursos.com/" target="_blank"><img src="img/logo-vector.svg" alt="Logo"></a>
+        </div>
+        <div class="title">
+            <h1>ENCRIPTADOR DE TEXTO</h1>
         </div>
     </header>
     <main class="main main-grid">
@@ -37,8 +40,10 @@
         </div>
         <div class="interaction section3">
             <div class="interaction-info">
-                <img src="img/info-vector.svg" alt="Información">
+                <div id="info" class="interaction-info">
+                    <img src="img/info-vector.svg" alt="Información">
                 <p>Sólo letras minúsculas y sin acentos.</p>
+                </div>
             </div>
             <div class="buttons">
                 <button value="Encriptar" id="enc" type="submit" onclick="encriptText()">Encriptar</button>

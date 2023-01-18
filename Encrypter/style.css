@@ -51,6 +51,70 @@ body {
     grid-template-rows: auto auto auto;
 }
 
+.bg-modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.modal-rel {
+    position: relative;
+}
+
+.modal-abs {
+    background-color: var(--lightblue100);
+    width: 25rem;
+    height: 20rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-abs p:first-child {
+    width: 7.5rem;
+    height: 7.5rem;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--darkblue300);
+    text-align: center;
+    border: 1rem solid var(--darkblue300);
+    border-radius: 20rem;
+    margin: 0 0 1rem 0;
+}
+
+.modal-abs p:nth-child(2) {
+    color:var(--darkblue300);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.modal-abs p:last-child {
+    color:var(--gray400);
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
 /* HEADER */
 
 .header {
@@ -60,11 +124,36 @@ body {
     grid-row: 1/2;
 }
 
+.header-title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
 /* LOGO */
 
 .logo {
-    width: 60%;
+    width: 5%;
     margin: 2rem 0 0 4rem;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 4.8rem;
+    margin: 2rem 0 0 4rem;
+}
+
+.title h1{
+    color:var(--darkblue300);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    padding-right: 1rem;
 }
 
 /* MAIN */
@@ -272,14 +361,15 @@ textarea:focus {
 
     overflow-y: auto;
     outline: none;
-    background-color: var(--lightblue300);
+    /* background-color: var(--lightblue300); */
+    background-color: transparent;
     border-radius: 1rem;
-    box-shadow: 0 0 1rem 0.5rem var(--lightblue400) inset;
+    /* box-shadow: 0 0 1rem 0.5rem var(--lightblue400) inset; */
     resize: none;
 }
 
 .text-encrypted-yes textarea {
-    color: var(--darkblue300);
+    color: var(--darkblue400);
     background-color: transparent;
     border: none;
     font-size: 1.6rem;
@@ -293,7 +383,6 @@ textarea:focus {
     padding: 1rem;
     margin: auto;
     box-shadow: none;
-    background-color: transparent;
 }
 
 .btn-clipboard {
@@ -369,6 +458,7 @@ textarea:focus {
     flex-direction: column;
     justify-content: space-between;
     margin: 1rem;
+    transition: 350ms ease-in-out;
 }
 
 .interaction-info {
@@ -395,6 +485,7 @@ textarea:focus {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 1.7rem;
     height: 5.5rem;
     width: 100%;
     border-radius: 2.5rem;
@@ -404,11 +495,11 @@ textarea:focus {
 
 .buttons button:hover {
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .buttons button:active {
-    font-size: 3rem;
+    font-size: 1.4rem;
 }
 
 .buttons button:first-child {
@@ -464,7 +555,39 @@ textarea:focus {
     color: var(--darkblue200);
 }
 
+.enfocar {
+    animation: tiembla 0.2s infinite;
+}
+
+@keyframes tiembla{
+    0%  {transform: rotateZ( -1deg) scale(1.5); }
+    25% {transform: rotateZ( -2deg) scale(1.5); }
+    50% {transform: rotateZ( 0deg) scale(1.5); }
+    75% {transform: rotateZ( 1deg) scale(1.5); }
+    100%{transform: rotateZ( 2deg) scale(1.5); }
+}
+
+
 @media (min-width: 1025px) {
+
+    .modal-abs {
+        width: 35rem;
+        height: 30rem;
+    }
+
+    .modal-abs p:first-child {
+        width: 11rem;
+        height: 11rem;
+        font-size: 6rem;
+    }
+
+    .modal-abs p:nth-child(2) {
+        font-size: 3rem;
+    }
+    
+    .modal-abs p:last-child {
+        font-size: 2.2rem;
+    }
 
     .grid-layout{
         grid-template-areas:
@@ -478,6 +601,10 @@ textarea:focus {
     .header {
         grid-column: 1/3;
         grid-row: 1/2;
+    }
+
+    .title h1{
+        font-size: 3.5rem;
     }
 
     .main {
@@ -635,7 +762,26 @@ textarea:focus {
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
+
+    .modal-abs {
+        width: 30rem;
+        height: 25rem;
+    }
     
+    .modal-abs p:first-child {
+        width: 9rem;
+        height: 9rem;
+        font-size: 5rem;
+    }
+
+    .modal-abs p:nth-child(2) {
+        font-size: 2.7rem;
+    }
+    
+    .modal-abs p:last-child {
+        font-size: 1.8rem;
+    }
+
     .grid-layout {
         grid-template-areas: 
             "header header" 
@@ -648,6 +794,10 @@ textarea:focus {
         .header {
             grid-column: 1/3;
             grid-row: 1/2;
+        }
+
+        .title h1{
+            font-size: 3rem;
         }
     
         .main {
@@ -707,3 +857,146 @@ textarea:focus {
 /* @media (min-width: 320px) and (max-width: 767px) {
 
 } */
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background-color: #121212;
+    }
+
+    .modal-abs {
+        background-color: #121212;
+        border: 1rem solid white;
+    }
+
+    .logo {
+        filter: invert(9%) sepia(91%) saturate(1901%) hue-rotate(209deg) brightness(97%) contrast(102%);
+    }
+
+    .title h1{
+        filter: invert(9%) sepia(91%) saturate(1901%) hue-rotate(209deg) brightness(97%) contrast(102%);
+    }
+
+    .text-input textarea {
+        color: var(--lightblue300);
+    }
+
+    textarea:focus {
+        color: var(--lightblue300);
+        /* box-shadow: 0 0 1rem 0.5rem var(--gray500) inset; */
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--gray500);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--gray400);
+    }
+    
+    ::-webkit-scrollbar-thumb:active {
+        background-color: var(--gray300);
+    }
+
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-corner,
+    ::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+    .text-input textarea::placeholder {
+        color: var(--lightblue400);
+    }
+
+    .text-output {
+        background-color: #343A404A;
+    }
+
+    .text-encrypted-yes textarea#txt {
+        color: var(--lightblue400);
+    }
+
+    .btn-clipboard {
+        filter: invert(89%) sepia(8%) saturate(1279%) hue-rotate(196deg) brightness(106%) contrast(97%);
+    }
+    
+    .btn-clipboard:active {
+        filter: invert(75%) sepia(21%) saturate(355%) hue-rotate(191deg) brightness(94%) contrast(83%);
+    }
+
+    .advice-big {
+        color: var(--darkblue100);
+    }
+    
+    .advice-small {
+        color: var(--lightblue100);
+    }
+
+    .interaction-info img{
+        filter: invert(89%) sepia(8%) saturate(1279%) hue-rotate(196deg) brightness(106%) contrast(97%);
+    }
+    
+    .interaction-info p {
+        color: var(--lightblue300);
+    }
+
+    .buttons button:first-child {
+        background-color: var(--gray400);
+        color: var(--lightblue400);
+    }
+    
+    .buttons button:first-child:hover {
+        background-color: var(--gray300);
+        color: var(--darkblue300);
+    }
+    
+    .buttons button:first-child:active {
+        background-color: var(--gray500);
+        color: var(--lightblue200);
+    }
+    
+    .buttons button:last-child {
+        background-color: var(--gray100);
+        color: var(--darkblue300);
+        border: none;
+    }
+    
+    .buttons button:last-child:hover {
+        background-color: var(--gray200);
+    }
+    
+    .buttons button:last-child:active {
+        background-color: var(--gray300);
+        color: var(--darkblue500);
+    }
+
+    .button-copy-pc button {
+        background-color: var(--gray400);
+        color: var(--lightblue400);
+        font-size: 1.7rem;
+    }
+    
+    .button-copy-pc button:hover{
+        font-size: 2rem;
+        background-color: var(--gray300);
+        color: var(--darkblue300);
+    }
+    
+    .button-copy-pc button:active {
+        font-size: 1.4rem;
+        background-color: var(--gray500);
+        color: var(--lightblue200);
+    }
+
+    .attribution p {
+        font-size: 1rem;
+        color: var(--darkblue100);        
+    }
+    
+    .attribution a {
+        font-size: 1.2rem;
+        color: var(--gray200);
+    }
+}

@@ -2,11 +2,19 @@ let siono = 0;
 let arrayEncrip = ['a', 'e', 'i', 'o', 'u'];
 let arrayDecrip = ['ai', 'enter', 'imes', 'ober', 'ufat'];
 let text = '';
+let nope = 0;
+const mayusytildes = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S',
+                    'T','U','V','W','X','Y','Z','Á','É','Í','Ó','Ú','À','È','Ì','Ò','Ù','Á','É','Í',
+                    'Ó','Ú','Ý','Â','Ê','Î','Ô','Û','Ã','Ẽ','Ĩ','Õ','Ũ','Ä','Ë','Ï','Ö','Ü','Ÿ','Ç'];
+let show = document.getElementById('info');
+let cuerpo = document.getElementById('body');
+let modal = '<div class="bg-modal"></div><div class="modal-abs"><p>&#10004;</p><p>¡Copiado!</p><p>Su selección ha sido copiada en el portapapeles</p></div>';
 
 function encriptText() {
     text = '';
     let str = document.getElementById('input').value;
-    if (str === '') {
+    comprobarReglas(mayusytildes,str);
+    if (str === '' || nope) {
         siono = 0;
         validar();
         return;
@@ -32,7 +40,8 @@ function decriptText() {
         let text4 = '';
         let text5 = '';
         let str = document.getElementById('input').value;
-        if (str === '') {
+        comprobarReglas(mayusytildes,str);
+        if (str === '' || nope) {
             siono = 0;
             validar();
             return;
@@ -93,7 +102,8 @@ function copyToClipboard() {
 
         navigator.clipboard.writeText(content)
             .then(() => {
-            console.log("Text copied to clipboard...")
+            console.log("Text copied to clipboard...");
+            showCopyMessage();
         })
             .catch(err => {
             console.log('Something went wrong', err);
@@ -101,3 +111,45 @@ function copyToClipboard() {
     }
     else {return;}
 }
+
+function comprobarReglas(arr,val) {
+    for(let i = 0; i < val.length; i++) {
+        if(arr.some((arrVal) => val[i] === arrVal)) {
+            contarAdelante();
+            return nope = 1; 
+        } else {
+            nope = 0;
+        }
+    }
+    return nope; 
+}
+
+function contarAdelante() {
+    setTimeout(mostrarMensaje, 1)
+}
+
+function contarAtras() {
+    setTimeout(quitarMensaje, 1000)
+}
+
+function mostrarMensaje() {
+    show.classList.add('enfocar');
+    contarAtras();
+}
+
+function quitarMensaje() {
+    show.classList.remove('enfocar');
+}
+
+function showCopyMessage() {
+    // cuerpo.innerHTML = `${modal}`;
+    cuerpo.appendChild(`${modal}`);
+    cuerpo.classList.add('modal-rel');
+    setTimeout(quitCopyMessage, 1000);
+}
+
+function quitCopyMessage() {
+    cuerpo.classList.remove('modal-rel')
+    cuerpo.removeChild(`${modal}`);
+}
+
