@@ -1,8 +1,8 @@
-let siono = 0;
+let allow = 1;
 let arrayEncrip = ['a', 'e', 'i', 'o', 'u'];
 let arrayDecrip = ['ai', 'enter', 'imes', 'ober', 'ufat'];
 let text = '';
-let nope = 0;
+let rules = 0;
 const mayusytildes = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S',
                     'T','U','V','W','X','Y','Z','Á','É','Í','Ó','Ú','À','È','Ì','Ò','Ù','Á','É','Í',
                     'Ó','Ú','Ý','Â','Ê','Î','Ô','Û','Ã','Ẽ','Ĩ','Õ','Ũ','Ä','Ë','Ï','Ö','Ü','Ÿ','Ç'];
@@ -12,55 +12,41 @@ function encriptText() {
     text = '';
     let str = document.getElementById('input').value;
     comprobarReglas(mayusytildes,str);
-    if (str === '' || nope) {
-        siono = 0;
+    if (str === '' || rules) {
+        allow = 0;
         validar();
         return;
     }
     else {
-        for(let i = 0; str.length > i; i++) {
-            str[i] === 'a' ? text += 'ai' :
-            str[i] === 'e' ? text += 'enter' :
-            str[i] === 'i' ? text += 'imes' :
-            str[i] === 'o' ? text += 'ober' :
-            str[i] === 'u' ? text += 'ufat' : 
-            text += str[i];
-        }
+        text = str.replaceAll('u', 'ufat').replaceAll('o', 'ober').replaceAll('i', 'imes').replaceAll('e', 'enter').replaceAll('a', 'ai');
         return showText(text);
     }
 }
 
 function decriptText() {
-    if(siono){
+    // comprobarPhrase();
+    // if(allow){
         text = '';
-        let text2 = '';
-        let text3 = '';
-        let text4 = '';
-        let text5 = '';
         let str = document.getElementById('input').value;
         comprobarReglas(mayusytildes,str);
-        if (str === '' || nope) {
-            siono = 0;
+        if (str === '' || rules) {
+            allow = 0;
             validar();
             return;
         }
         else {
-            text5 += str.replaceAll('ai', 'a');
-            text4 = text5.replaceAll('enter', 'e');
-            text3 = text4.replaceAll('imes', 'i');
-            text2 = text3.replaceAll('ober', 'o');
-            text = text2.replaceAll('ufat', 'u');
+            text = str.replaceAll('ai', 'a').replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ober', 'o').replaceAll('ufat', 'u');
             return showText(text);
         }    
-    }
-    else {
-        return;
-    }
+    // }
+    // else {
+    //     return;
+    // }
 
 }
 
 function showText() {
-    siono = 1;
+    allow = 1;
     validar();
     if(document.getElementById('txt')) {
         return document.getElementById('txt').innerHTML=text;
@@ -72,7 +58,7 @@ function showText() {
 
 
 function validar() {
-    if (siono) {   
+    if (allow) {   
         document.getElementById('output').classList.add('text-encrypted', 'text-encrypted-yes');
         document.getElementById('output').classList.remove('text-encrypted-no');
         document.getElementById('ad').classList.add('deactive');
@@ -114,12 +100,25 @@ function comprobarReglas(arr,val) {
     for(let i = 0; i < val.length; i++) {
         if(arr.some((arrVal) => val[i] === arrVal)) {
             contarAdelante();
-            return nope = 1; 
+            return rules = 1; 
         } else {
-            nope = 0;
+            rules = 0;
         }
     }
-    return nope; 
+    return rules; 
+}
+
+function comprobarPhrase() {
+    let str = document.getElementById('input').value;
+    for(let i = 0; i < str.length; i++) {
+        let position = str.search(arrayDecrip[i]);
+        if(position > 0) {
+            return allow = 1; 
+        } else {
+            allow = 0;
+        }
+    }
+    return allow; 
 }
 
 function contarAdelante() {

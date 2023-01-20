@@ -613,6 +613,7 @@ textarea:focus {
     .footer {
         grid-column: 1/3;
         grid-row: 3/4;
+        margin-top: 2rem;
     }
 
     .main-grid {
@@ -662,13 +663,12 @@ textarea:focus {
 
     .text-output {
         margin: 1rem 5rem 1rem 5rem;
-        padding: 0;
         height: 50rem;
     }
 
     .text-encrypted-yes {
         width: 92.5%;
-        min-height: 40rem;
+        /* min-height: 40rem; */
         max-height: 50rem;
     }
 
@@ -859,7 +859,7 @@ textarea:focus {
 @media (prefers-color-scheme: dark) {
 
     body {
-        background-color: #121212;
+        background-color: #202124;
     }
 
     .bg-modal {
@@ -898,7 +898,6 @@ textarea:focus {
 
     textarea:focus {
         color: var(--lightblue300);
-        /* box-shadow: 0 0 1rem 0.5rem var(--gray500) inset; */
         box-shadow: none;
         background-color: transparent;
     }
@@ -959,12 +958,12 @@ textarea:focus {
 
     .buttons button:first-child {
         background-color: var(--gray400);
-        color: var(--lightblue400);
+        color: var(--lightblue300);
     }
     
     .buttons button:first-child:hover {
         background-color: var(--gray300);
-        color: var(--darkblue300);
+        color: var(--darkblue400);
     }
     
     .buttons button:first-child:active {
@@ -989,14 +988,14 @@ textarea:focus {
 
     .button-copy-pc button {
         background-color: var(--gray400);
-        color: var(--lightblue400);
+        color: var(--lightblue300);
         font-size: 1.7rem;
     }
     
     .button-copy-pc button:hover{
         font-size: 2rem;
         background-color: var(--gray300);
-        color: var(--darkblue300);
+        color: var(--darkblue400);
     }
     
     .button-copy-pc button:active {
@@ -1012,6 +1011,6 @@ textarea:focus {
     
     .attribution a {
         font-size: 1.2rem;
-        color: var(--gray200);
+        color: var(--gray100);
     }
 }
