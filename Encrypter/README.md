@@ -1,6 +1,6 @@
 # **Text Encrypter**
 
-*This is a Challenge made by Alura Latam in the program alliance between Oracle and Alura Latam called Oracle ONE (Oracle Next Education).*
+*This is a Challenge made by Alura Latam of the program alliance between Oracle and Alura Latam called Oracle ONE (Oracle Next Education).*
 
 ## **About the Project**
 
@@ -35,7 +35,7 @@ Letter 'u' is converted to 'ufat'
 
 # **Encriptador de Texto**
 
-*Este es un Desafío hecho por Alura Latam en el programa alianza entre Oralce y Alura Latam llamado Oracel ONE (Oracle Next Education).*
+*Este es un Desafío hecho por Alura Latam del programa alianza entre Oralce y Alura Latam llamado Oracel ONE (Oracle Next Education).*
 
 ## **Sobre el Proyecto**
 
