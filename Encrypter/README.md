@@ -71,6 +71,7 @@ La letra 'u' es convertida a 'ufat'
 ## **Preview**
 
 Light Mode | Dark Mode
+
 <img src="img/preview-mobile-light.jpeg" width="15%" title="Mobile Light Mode" alt="Mobile Light Mode">
 <img src="img/preview-tablet-light.jpeg" width="35%" title="Tablet Light Mode" alt="Mobile Dark Mode">
 <img src="img/preview-mobile-dark.jpeg" width="15%" title="Mobile Dark Mode" alt="Tablet Light Mode">
