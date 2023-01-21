@@ -135,6 +135,25 @@ body {
 .logo {
     width: 5%;
     margin: 2rem 0 0 4rem;
+    position: relative;
+}
+
+.element {
+    position: absolute;
+    margin: 2.4rem 0 0 1.6rem;
+    animation: lumine 0.85s infinite;
+}
+
+@keyframes lumine{
+    0%  {box-shadow: -30px -30px 10px 10px rgba(255,0,0,0.5); }
+    12.5% {box-shadow: 0px -45px 10px 10px rgba(255,0,150,0.5); }
+    25% {box-shadow: 30px -30px 10px 10px rgba(150,0,255,0.5); }
+    37.5% {box-shadow: 45px 0px 10px 10px rgba(0,0,255,0.5); }
+    50% {box-shadow: 30px 30px 10px 10px rgba(0,255,255,0.5); }
+    62.5% {box-shadow: 0px 45px 10px 10px rgba(0,255,0,0.5); }
+    75% {box-shadow: -30px 30px 10px 10px rgba(255,255,0,0.5); }
+    87.5% {box-shadow: -45px 0px 10px 10px rgba(255,150,0,0.5); }
+    100%  {box-shadow: -30px -30px 10px 10px rgba(255,0,0,0.5); }
 }
 
 .title{
@@ -358,7 +377,6 @@ textarea:focus {
     max-height: 15rem;
     padding: 1rem;
     margin: auto;
-
     overflow-y: auto;
     outline: none;
     background-color: transparent;
@@ -454,7 +472,6 @@ textarea:focus {
 .interaction {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin: 1rem;
     transition: 350ms ease-in-out;
 }
@@ -558,13 +575,12 @@ textarea:focus {
 }
 
 @keyframes tiembla{
-    0%  {transform: rotateZ( -1deg) scale(1.5); }
-    25% {transform: rotateZ( -2deg) scale(1.5); }
-    50% {transform: rotateZ( 0deg) scale(1.5); }
-    75% {transform: rotateZ( 1deg) scale(1.5); }
-    100%{transform: rotateZ( 2deg) scale(1.5); }
+    0%  {transform: rotateZ( -1deg); }
+    25% {transform: rotateZ( -2deg); }
+    50% {transform: rotateZ( 0deg); }
+    75% {transform: rotateZ( 1deg); }
+    100%{transform: rotateZ( 2deg); }
 }
-
 
 @media (min-width: 1025px) {
 
@@ -668,12 +684,10 @@ textarea:focus {
 
     .text-encrypted-yes {
         width: 92.5%;
-        /* min-height: 40rem; */
         max-height: 50rem;
     }
 
     .text-encrypted-yes textarea {
-        width: 100%;
         min-height: 40rem;
     }
     
@@ -683,6 +697,7 @@ textarea:focus {
 
     .interaction {
         margin: 2rem 0 2rem 20rem;
+        justify-content: space-between;
     }
 
     .button-copy-pc {
@@ -755,6 +770,14 @@ textarea:focus {
         background-repeat: no-repeat;
         background-position: center;
         transition: 500ms ease-in-out;
+    }
+
+    @keyframes tiembla{
+        0%  {transform: rotateZ( -1deg) scale(1.5); }
+        25% {transform: rotateZ( -2deg) scale(1.5); }
+        50% {transform: rotateZ( 0deg) scale(1.5); }
+        75% {transform: rotateZ( 1deg) scale(1.5); }
+        100%{transform: rotateZ( 2deg) scale(1.5); }
     }
 
 }
@@ -884,7 +907,7 @@ textarea:focus {
         color:var(--gray100);
     }
 
-    .logo {
+    .logo a img{
         filter: invert(9%) sepia(91%) saturate(1901%) hue-rotate(209deg) brightness(97%) contrast(102%);
     }
 

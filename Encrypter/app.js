@@ -24,25 +24,18 @@ function encriptText() {
 }
 
 function decriptText() {
-    // comprobarPhrase();
-    // if(allow){
-        text = '';
-        let str = document.getElementById('input').value;
-        comprobarReglas(mayusytildes,str);
-        if (str === '' || rules) {
-            allow = 0;
-            validar();
-            return;
-        }
-        else {
-            text = str.replaceAll('ai', 'a').replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ober', 'o').replaceAll('ufat', 'u');
-            return showText(text);
-        }    
-    // }
-    // else {
-    //     return;
-    // }
-
+    text = '';
+    let str = document.getElementById('input').value;
+    comprobarReglas(mayusytildes,str);
+    if (str === '' || rules) {
+        allow = 0;
+        validar();
+        return;
+    }
+    else {
+        text = str.replaceAll('ai', 'a').replaceAll('enter', 'e').replaceAll('imes', 'i').replaceAll('ober', 'o').replaceAll('ufat', 'u');
+        return showText(text);
+    }
 }
 
 function showText() {
@@ -83,7 +76,6 @@ function validar() {
 function copyToClipboard() {
     if(document.getElementById('txt')) {
         var content = document.getElementById('txt').innerHTML;
-
         navigator.clipboard.writeText(content)
             .then(() => {
                 showCopyMessage();
@@ -106,19 +98,6 @@ function comprobarReglas(arr,val) {
         }
     }
     return rules; 
-}
-
-function comprobarPhrase() {
-    let str = document.getElementById('input').value;
-    for(let i = 0; i < str.length; i++) {
-        let position = str.search(arrayDecrip[i]);
-        if(position > 0) {
-            return allow = 1; 
-        } else {
-            allow = 0;
-        }
-    }
-    return allow; 
 }
 
 function contarAdelante() {
@@ -148,4 +127,3 @@ function quitCopyMessage() {
     document.getElementById('modalabs-id').remove();
     document.getElementById('bgmodals-id').remove();
 }
-
