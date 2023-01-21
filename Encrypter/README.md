@@ -5,11 +5,11 @@
 
 *This is a Challenge made by [Alura Latam](https://www.aluracursos.com/) of the program alliance between [Oracle](https://www.oracle.com/) and [Alura Latam](https://www.aluracursos.com/) called [Oracle ONE (Oracle Next Education)](https://www.oracle.com/ar/education/oracle-next-education/).*
 
-Click [here](README-EN.md) to view the `EN` version.
+Click [here](README-EN.md) to view the README `EN` version.
 
 *Este es un Desafío hecho por [Alura Latam](https://www.aluracursos.com/) del programa alianza entre [Oracle](https://www.oracle.com/) y [Alura Latam](https://www.aluracursos.com/) llamado [Oracle ONE (Oracle Next Education)](https://www.oracle.com/ar/education/oracle-next-education/).*
 
-Clic [aquí](README-ES.md) para ver la versión en `ES`.
+Clic [aquí](README-ES.md) para ver la versión README en `ES`.
 
 ## **Preview | Vista Anticipada**
 
