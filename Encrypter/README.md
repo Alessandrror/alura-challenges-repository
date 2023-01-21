@@ -67,3 +67,13 @@ La letra 'u' es convertida a 'ufat'
 ***Extras:***
 
 > Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, o sea que tenga la misma funcionalidad del `Ctrl` + `C` o de la opción "copiar" del menú de las aplicaciones.
+
+## **Preview**
+
+Light Mode | Dark Mode
+<img src="/img/preview-mobile-light.jpeg" width="15%">
+<img src="/img/preview-tablet-light.jpeg" width="35%">
+<img src="/img/preview-mobile-dark.jpeg" width="15%">
+<img src="/img/preview-tablet-dark.jpeg" width="35%">
+<img src="/img/preview-pc-light.jpeg" width="50%">
+<img src="/img/preview-pc-dark.jpeg" width="50%">
