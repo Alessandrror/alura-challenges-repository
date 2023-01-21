@@ -1,6 +1,6 @@
 # **Text Encrypter**
 
-*This is a Challenge made by Alura Latam of the program alliance between Oracle and Alura Latam called Oracle ONE (Oracle Next Education).*
+*This is a Challenge made by [Alura Latam](https://www.aluracursos.com/) of the program alliance between [Oracle](https://www.oracle.com/) and [Alura Latam](https://www.aluracursos.com/) called [Oracle ONE (Oracle Next Education)](https://www.oracle.com/ar/education/oracle-next-education/).*
 
 ## **About the Project**
 

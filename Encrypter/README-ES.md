@@ -1,6 +1,8 @@
 # **Encriptador de Texto**
 
-*Este es un Desafío hecho por Alura Latam del programa alianza entre Oralce y Alura Latam llamado Oracel ONE (Oracle Next Education).*
+*Este es un Desafío hecho por [Alura Latam](https://www.aluracursos.com/) del programa alianza entre [Oracle](https://www.oracle.com/) y [Alura Latam](https://www.aluracursos.com/) llamado [Oracle ONE (Oracle Next Education)](https://www.oracle.com/ar/education/oracle-next-education/).*
+
+Clic [aquí](README-ES.md) para ver la versión en `ES`.
 
 ## **Sobre el Proyecto**
 
