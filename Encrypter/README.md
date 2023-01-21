@@ -70,11 +70,10 @@ La letra 'u' es convertida a 'ufat'
 
 ## **Preview**
 
-*Light Mode* | *Dark Mode*
+<p align="center"><em>Light Mode</em> | <em>Dark Mode</em></p>
 
-<img src="img/preview-mobile-light.jpeg" title="Mobile Light Mode" alt="Mobile Light Mode">
-<img src="img/preview-tablet-light.jpeg" title="Tablet Light Mode" alt="Mobile Dark Mode">
-<img src="img/preview-mobile-dark.jpeg" title="Mobile Dark Mode" alt="Tablet Light Mode">
-<img src="img/preview-tablet-dark.jpeg" title="Tablet Light Mode" alt="Tablet Dark Mode">
-<img src="img/preview-pc-light.jpeg" title="Computer Light Mode" alt="Computer Light Mode">
-<img src="img/preview-pc-dark.jpeg" title="Computer Dark Mode" alt="Computer Dark Mode">
+<div align="center">
+<img src="img/preview-mobile-light.jpeg" title="Mobile Light Mode" alt="Mobile Light Mode" width="300" height="700"> <img src="img/preview-mobile-dark.jpeg" title="Mobile Dark Mode" alt="Mobile Dark Mode" width="300" height="700">
+<img src="img/preview-tablet-light.jpeg" title="Tablet Light Mode" alt="Tablet Light Mode" width="45%"> <img src="img/preview-tablet-dark.jpeg" title="Tablet Light Mode" alt="Tablet Dark Mode" width="45%">
+<img src="img/preview-pc-light.jpeg" title="Computer Light Mode" alt="Computer Light Mode" width="45%"> <img src="img/preview-pc-dark.jpeg" title="Computer Dark Mode" alt="Computer Dark Mode" width="45%">
+</div>
