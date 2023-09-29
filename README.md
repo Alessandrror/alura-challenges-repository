@@ -1,4 +1,4 @@
-# My main repository
+# Alura Challenges Repository
 
 This first project is an ***[Encrypter](https://github.com/Alessandrror/main-repository/tree/main/Encrypter)***, so it is a text encrypter and decrypter. This challenge was created by Alura Latam with Oracle and its program ONE Oracle Next Education:
 
