@@ -1,25 +1,12 @@
 ---
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
-<!-- <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html> --><!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -27,7 +14,6 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
       href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
@@ -36,7 +22,6 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <slot />
-
 
   <style is:global>
     :root {
@@ -74,6 +59,121 @@ const { title } = Astro.props
       min-width: 30rem;
       max-width: 144rem;
       margin: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 1rem;
+      background-color: var(--lightblue400);
+      border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-corner,
+    ::-webkit-scrollbar-track {
+      background-color: var(--lightblue400);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--lightblue500);
+      background-clip: padding-box;
+      border: 2px solid transparent;
+      border-radius: 0.4rem;
+
+      &:hover {
+        background-color: var(--darkblue100);
+      }
+
+      &:active {
+        background-color: var(--darkblue200);
+      }
+    }
+
+    ::-webkit-scrollbar-button {
+      background-color: var(----lightblue400);
+      border-radius: 0.8rem;
+      display: block;
+      height: 0.1rem;
+      background-size: 0.8rem;
+      background-repeat: no-repeat;
+
+      &:single-button:vertical:decrement {
+        height: 1.2rem;
+        width: 1.6rem;
+        background-position: center 4px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='50,00 0,50 100,50'/></svg>");
+      }
+
+      &:single-button:vertical:decrement:hover {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='50,00 0,50 100,50'/></svg>");
+      }
+
+      &:single-button:vertical:decrement:active {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='50,00 0,50 100,50'/></svg>");
+      }
+
+      &:single-button:vertical:increment {
+        height: 12px;
+        width: 16px;
+        background-position: center 2px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='0,0 100,0 50,50'/></svg>");
+      }
+
+      &:single-button:vertical:increment:hover {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='0,0 100,0 50,50'/></svg>");
+      }
+
+      &:single-button:vertical:increment:active {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='0,0 100,0 50,50'/></svg>");
+      }
+
+      &:single-button:horizontal:decrement {
+        height: 12px;
+        width: 12px;
+        background-position: 3px 3px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='0,50 50,100 50,0'/></svg>");
+      }
+
+      &:single-button:horizontal:decrement:hover {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='0,50 50,100 50,0'/></svg>");
+      }
+
+      &:single-button:horizontal:decrement:active {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='0,50 50,100 50,0'/></svg>");
+      }
+
+      &:single-button:horizontal:increment {
+        height: 12px;
+        width: 12px;
+        background-position: 3px 3px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='0,0 0,100 50,50'/></svg>");
+      }
+
+      &:single-button:horizontal:increment:hover {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='0,0 0,100 50,50'/></svg>");
+      }
+
+      &:single-button:horizontal:increment:active {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='0,0 0,100 50,50'/></svg>");
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--gray500);
+
+        &:hover {
+          background-color: var(--gray400);
+        }
+
+        &:active {
+          background-color: var(--gray300);
+        }
+      }
+
+      ::-webkit-scrollbar,
+      ::-webkit-scrollbar-corner,
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
     }
   </style>
 </html>

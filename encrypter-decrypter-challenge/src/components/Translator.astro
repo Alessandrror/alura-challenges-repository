@@ -1,0 +1,245 @@
+---
+
+---
+
+<div class="interaction section3">
+  <div class="interaction-info">
+    <div id="info" class="interaction-info">
+      <img src="img/info-vector.svg" alt="Información" />
+      <p>Sólo letras minúsculas y sin acentos.</p>
+    </div>
+  </div>
+  <div class="buttons">
+    <button value="Encriptar" id="enc" type="submit" onclick="encriptText()"
+      >Encriptar</button
+    >
+    <button value="Desencriptar" id="denc" type="submit" onclick="decriptText()"
+      >Desencriptar</button
+    >
+  </div>
+</div>
+
+<style>
+  .section3 {
+    grid-area: section3;
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .interaction {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    transition: 350ms ease-in-out;
+  }
+
+  .interaction-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: 1.2rem;
+
+    & p {
+      color: var(--gray400);
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+
+    & button {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.7rem;
+      height: 5.5rem;
+      width: 100%;
+      border-radius: 2.5rem;
+      margin: 1rem;
+      transition: 350ms ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+      font-size: 2rem;
+    }
+
+    &:active {
+      font-size: 1.4rem;
+    }
+
+    &:first-child {
+      background-color: var(--darkblue300);
+      color: var(--lightblue100);
+      border: none;
+    }
+
+    &:last-child {
+      background-color: var(--gray100);
+      color: var(--darkblue300);
+      border: none;
+    }
+
+    &:first-child:hover {
+      background-color: var(--darkblue400);
+    }
+    &:first-child:active {
+      background-color: var(--darkblue500);
+    }
+    &:last-child:hover {
+      background-color: var(--gray200);
+    }
+    &:last-child:active {
+      background-color: var(--gray300);
+    }
+  }
+
+  .enfocar {
+    animation: tiembla 0.2s infinite;
+  }
+
+  @keyframes tiembla {
+    0% {
+      transform: rotateZ(-1deg);
+    }
+    25% {
+      transform: rotateZ(-2deg);
+    }
+    50% {
+      transform: rotateZ(0deg);
+    }
+    75% {
+      transform: rotateZ(1deg);
+    }
+    100% {
+      transform: rotateZ(2deg);
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 1024px) {
+    .section3 {
+      grid-column: 1/3;
+      grid-row: 3/4;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1rem;
+
+      & button {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        height: 5.5rem;
+        width: 100%;
+        border-radius: 2.5rem;
+        margin: 1rem;
+        transition: 350ms ease-in-out;
+      }
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .section3 {
+      grid-column: 1/3;
+      grid-row: 3/4;
+    }
+
+    .interaction {
+      margin: 2rem 0 2rem 20rem;
+      justify-content: space-between;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1rem;
+
+      & button {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        height: 5.5rem;
+        width: 40%;
+        border-radius: 2.5rem;
+        margin: 1rem;
+        transition: 350ms ease-in-out;
+      }
+    }
+
+    @keyframes tiembla {
+      0% {
+        transform: rotateZ(-1deg) scale(1.5);
+      }
+      25% {
+        transform: rotateZ(-2deg) scale(1.5);
+      }
+      50% {
+        transform: rotateZ(0deg) scale(1.5);
+      }
+      75% {
+        transform: rotateZ(1deg) scale(1.5);
+      }
+      100% {
+        transform: rotateZ(2deg) scale(1.5);
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .interaction-info {
+      & img {
+        filter: invert(89%) sepia(8%) saturate(1279%) hue-rotate(196deg)
+          brightness(106%) contrast(97%);
+      }
+
+      & p {
+        color: var(--lightblue300);
+      }
+    }
+
+    .buttons {
+      & button {
+        &:first-child {
+          background-color: var(--gray400);
+          color: var(--lightblue300);
+        }
+
+        &:first-child:hover {
+          background-color: var(--gray300);
+          color: var(--darkblue400);
+        }
+
+        &:first-child:active {
+          background-color: var(--gray500);
+          color: var(--lightblue200);
+        }
+
+        &:last-child {
+          background-color: var(--gray100);
+          color: var(--darkblue300);
+          border: none;
+        }
+
+        &:last-child:hover {
+          background-color: var(--gray200);
+        }
+
+        &:last-child:active {
+          background-color: var(--gray300);
+          color: var(--darkblue500);
+        }
+      }
+    }
+  }
+</style>
