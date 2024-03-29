@@ -6,7 +6,7 @@ import data from "@components/app"
 ---
 
 <Layout title="Encrypter">
-  <body id="body-modal">
+  <body>
     <header class="header">
       <div class="logo">
         <span class="element"></span>
@@ -35,6 +35,7 @@ import data from "@components/app"
         </p>
       </div>
     </footer>
+    <div id="bgmodals-id" class="bg-modal-hidden"></div><div id="modalabs-id" class="modal-abs-hidden"><p>&#10004;</p><p>¡Copiado!</p><p>Su selección ha sido copiada en el portapapeles</p></div>
   </body>
 </Layout>
 
@@ -138,14 +139,23 @@ import data from "@components/app"
 
   .bg-modal {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
+    overflow: hidden;
     background-color: black;
     opacity: 0.7;
   }
 
+  .bg-modal-hidden {
+    display: none;
+  }
+
   .modal-rel {
     position: relative;
+  }
+
+  .modal-abs-hidden {
+    display: none;
   }
 
   .modal-abs {
@@ -615,18 +625,17 @@ function quitarMensaje() {
 }
 
 function showCopyMessage() {
-  document
-    .getElementById("body-modal")
-    .insertAdjacentHTML(
-      "beforeend",
-      '<div id="bgmodals-id" class="bg-modal"></div><div id="modalabs-id" class="modal-abs"><p>&#10004;</p><p>¡Copiado!</p><p>Su selección ha sido copiada en el portapapeles</p></div>'
-    );
+  document.getElementById('bgmodals-id').classList.remove('bg-modal-hidden')
+  document.getElementById('bgmodals-id').classList.add('bg-modal')
+  document.getElementById("modalabs-id").classList.remove('modal-abs-hidden')
+  document.getElementById("modalabs-id").classList.add('modal-abs')
   setTimeout(quitCopyMessage, 1000);
 }
 
 function quitCopyMessage() {
-  document.getElementById("body-modal").classList.remove("modal-rel");
-  document.getElementById("modalabs-id").remove();
-  document.getElementById("bgmodals-id").remove();
+  document.getElementById("bgmodals-id").classList.add('bg-modal-hidden')
+  document.getElementById("bgmodals-id").classList.remove('bg-modal')
+  document.getElementById("modalabs-id").classList.add('modal-abs-hidden')
+  document.getElementById("modalabs-id").classList.remove('modal-abs')
 }
 </script>
