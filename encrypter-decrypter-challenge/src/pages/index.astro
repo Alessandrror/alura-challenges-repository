@@ -1,11 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Wrapper from "@components/Wrapper.astro";
+import Layout from "../layouts/Layout.astro"
+import Wrapper from "@components/Wrapper.astro"
+
+import data from "@components/app"
 ---
 
 <Layout title="Encrypter">
   <body id="body-modal">
-    <header class="header header-title">
+    <header class="header">
       <div class="logo">
         <span class="element"></span>
         <a href="https://www.aluracursos.com/" target="_blank"
@@ -16,7 +18,7 @@ import Wrapper from "@components/Wrapper.astro";
         <h1>ENCRIPTADOR DE TEXTO</h1>
       </div>
     </header>
-    <main class="main main-grid">
+    <main class="main">
       <Wrapper />
     </main>
     <footer class="footer">
@@ -27,7 +29,7 @@ import Wrapper from "@components/Wrapper.astro";
             target="_blank">Oracle ONE</a
           >. Provided by: <a href="https://www.aluracursos.com/" target="_blank"
             >Alura Latam</a
-          >. Coded by: <a target="_blank" href="https://github.com/Alessandrror"
+          >. Coded by: <a target="_blank" href="https://github.com/alessandrror"
             >Alessandro Rivas</a
           >.
         </p>
@@ -55,10 +57,7 @@ import Wrapper from "@components/Wrapper.astro";
     grid-area: header;
     grid-column: 1/3;
     grid-row: 1/2;
-  }
-
-  .header-title {
-    width: 100%;
+		margin-top: 1.25rem;
     display: flex;
     flex-direction: row;
   }
@@ -100,9 +99,7 @@ import Wrapper from "@components/Wrapper.astro";
     grid-area: main;
     grid-column: 1/3;
     grid-row: 2/3;
-  }
 
-  .main-grid {
     display: grid;
     grid-template-areas:
       "section1"
@@ -116,6 +113,9 @@ import Wrapper from "@components/Wrapper.astro";
     grid-area: footer;
     grid-column: 1/4;
     grid-row: 3/4;
+		display: flex;
+		justify-content: center;
+		align-items: end;
   }
 
   .attribution {
@@ -127,6 +127,7 @@ import Wrapper from "@components/Wrapper.astro";
     & p {
       font-size: 1rem;
       color: var(--gray300);
+			margin-bottom: 0.5rem;
     }
 
     & a {
@@ -412,3 +413,220 @@ import Wrapper from "@components/Wrapper.astro";
     }
   }
 </style>
+
+<script is:inline>
+let allow = 1;
+const arrayEncrip = ["a", "e", "i", "o", "u"];
+const arrayDecrip = ["ai", "enter", "imes", "ober", "ufat"];
+let text = "";
+let rules = 0;
+const mayusytildes = [
+  "á",
+  "é",
+  "í",
+  "ó",
+  "ú",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "Ñ",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "Á",
+  "É",
+  "Í",
+  "Ó",
+  "Ú",
+  "À",
+  "È",
+  "Ì",
+  "Ò",
+  "Ù",
+  "Á",
+  "É",
+  "Í",
+  "Ó",
+  "Ú",
+  "Ý",
+  "Â",
+  "Ê",
+  "Î",
+  "Ô",
+  "Û",
+  "Ã",
+  "Ẽ",
+  "Ĩ",
+  "Õ",
+  "Ũ",
+  "Ä",
+  "Ë",
+  "Ï",
+  "Ö",
+  "Ü",
+  "Ÿ",
+  "Ç",
+];
+let show = document.getElementById("info");
+
+function encriptText() {
+  text = "";
+  let str = document.getElementById("input").value;
+  comprobarReglas(mayusytildes, str);
+  if (str === "" || rules) {
+    allow = 0;
+    validar();
+    return;
+  } else {
+    text = str
+      .replaceAll("u", "ufat")
+      .replaceAll("o", "ober")
+      .replaceAll("i", "imes")
+      .replaceAll("e", "enter")
+      .replaceAll("a", "ai");
+    return showText(text);
+  }
+}
+
+function decriptText() {
+  text = "";
+  let str = document.getElementById("input").value;
+  comprobarReglas(mayusytildes, str);
+  if (str === "" || rules) {
+    allow = 0;
+    validar();
+    return;
+  } else {
+    text = str
+      .replaceAll("ai", "a")
+      .replaceAll("enter", "e")
+      .replaceAll("imes", "i")
+      .replaceAll("ober", "o")
+      .replaceAll("ufat", "u");
+    return showText(text);
+  }
+}
+
+function showText() {
+  allow = 1;
+  validar();
+  if (document.getElementById("txt")) {
+    return (document.getElementById("txt").innerHTML = text);
+  } else {
+    document
+      .getElementById("output")
+      .insertAdjacentHTML(
+        "beforeend",
+        '<textarea readonly id="txt" >' + text + "</textarea>"
+      );
+  }
+}
+
+function validar() {
+  if (allow) {
+    document
+      .getElementById("output")
+      .classList.add("text-encrypted", "text-encrypted-yes");
+    document.getElementById("output").classList.remove("text-encrypted-no");
+    document.getElementById("ad").classList.add("deactive");
+    document.getElementById("output").classList.remove("deactive");
+    document.getElementById("btn").classList.remove("deactive");
+    if (document.getElementById("txt")) {
+      document.getElementById("txt").classList.remove("deactive");
+    }
+  } else {
+    document.getElementById("output").classList.add("text-encrypted-no");
+    document
+      .getElementById("output")
+      .classList.remove("text-encrypted", "text-encrypted-yes");
+    document.getElementById("ad").classList.remove("deactive");
+    document.getElementById("output").classList.add("deactive");
+    document.getElementById("btn").classList.add("deactive");
+    if (document.getElementById("txt")) {
+      document.getElementById("txt").classList.add("deactive");
+    }
+  }
+}
+
+function copyToClipboard() {
+  if (document.getElementById("txt")) {
+    var content = document.getElementById("txt").innerHTML;
+    navigator.clipboard
+      .writeText(content)
+      .then(() => {
+        showCopyMessage();
+        console.log("Text copied to clipboard...");
+      })
+      .catch((err) => {
+        console.log("Something went wrong", err);
+      });
+  } else {
+    return;
+  }
+}
+
+function comprobarReglas(arr, val) {
+  for (let i = 0; i < val.length; i++) {
+    if (arr.some((arrVal) => val[i] === arrVal)) {
+      contarAdelante();
+      return (rules = 1);
+    } else {
+      rules = 0;
+    }
+  }
+  return rules;
+}
+
+function contarAdelante() {
+  setTimeout(mostrarMensaje, 1);
+}
+
+function contarAtras() {
+  setTimeout(quitarMensaje, 1000);
+}
+
+function mostrarMensaje() {
+  show.classList.add("enfocar");
+  contarAtras();
+}
+
+function quitarMensaje() {
+  show.classList.remove("enfocar");
+}
+
+function showCopyMessage() {
+  document
+    .getElementById("body-modal")
+    .insertAdjacentHTML(
+      "beforeend",
+      '<div id="bgmodals-id" class="bg-modal"></div><div id="modalabs-id" class="modal-abs"><p>&#10004;</p><p>¡Copiado!</p><p>Su selección ha sido copiada en el portapapeles</p></div>'
+    );
+  setTimeout(quitCopyMessage, 1000);
+}
+
+function quitCopyMessage() {
+  document.getElementById("body-modal").classList.remove("modal-rel");
+  document.getElementById("modalabs-id").remove();
+  document.getElementById("bgmodals-id").remove();
+}
+</script>
