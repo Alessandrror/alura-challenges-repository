@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!-- <!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html> --><!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <slot />
+
+
+  <style is:global>
+    :root {
+      /* DARK BLUE */
+      --darkblue100: #609ed4;
+      --darkblue200: #356ea9;
+      --darkblue300: #0a3871;
+      --darkblue400: #072b61;
+      --darkblue500: #052051;
+      /* LIGHT BLUE  */
+      --lightblue100: #f3f5fc;
+      --lightblue200: #eff1fa;
+      --lightblue300: #e9ecfb;
+      --lightblue400: #aab2d5;
+      --lightblue500: #757fb2;
+      /* GRAY */
+      --gray100: #ced4da;
+      --gray200: #adb5bd;
+      --gray300: #868e96;
+      --gray400: #495057;
+      --gray500: #343a40;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: black;
+    }
+
+    html {
+      font-size: 62.5%;
+      height: 100%;
+      min-width: 30rem;
+      max-width: 144rem;
+      margin: auto;
+    }
+  </style>
+</html>
