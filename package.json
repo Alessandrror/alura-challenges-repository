@@ -18,9 +18,16 @@
     "typescript": "^5.4.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@types/bun": "latest",
+    "playwright": "^1.43.0",
     "standard": "^17.1.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "module": "index.ts",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
