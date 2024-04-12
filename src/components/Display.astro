@@ -1,0 +1,287 @@
+<div class="text-output section2">
+  <div id="output" class="div-text text-encrypted-no deactive">
+    <button
+      class="btn-clipboard"
+      type="submit"
+      value="Copiar"
+      onclick="copyToClipboard()">Copiar</button
+    >
+  </div>
+  <div id="ad" class="advice">
+    <p class="advice-big">Ningún mensaje fue encontrado</p>
+    <p class="advice-small">
+      Ingresa el texto que desees encriptar o desencriptar.
+    </p>
+  </div>
+  <div id="btn" class="button-copy-pc deactive">
+    <button
+      class="btn-copy-pc"
+      type="submit"
+      value="Copiar"
+      onclick="copyToClipboard()">Copiar</button
+    >
+  </div>
+</div>
+
+<style>
+  .section2 {
+    grid-area: section2;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .text-output {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3.2rem;
+    margin: 0 1rem;
+    min-height: 100%;
+  }
+
+  .button-copy-pc,
+  .btn-copy-pc,
+  .deactive {
+    display: none;
+  }
+
+  .text-encrypted-no {
+    display: inline;
+    min-height: min(30rem);
+    min-width: min(25rem);
+    background-image: url(img/muñeco-vector.svg);
+    background-color: transparent;
+    box-shadow: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 500ms ease-in-out;
+  }
+
+  .text-encrypted-yes {
+    border: none;
+    font-size: 1.6rem;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    width: 100%;
+    min-height: 10rem;
+    max-height: 15rem;
+    padding: 1rem;
+    margin: auto;
+    overflow-y: auto;
+    outline: none;
+    background-color: transparent;
+    border-radius: 1rem;
+    resize: none;
+
+    & textarea {
+      color: var(--darkblue400);
+      background-color: transparent;
+      border: none;
+      font-size: 1.6rem;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      width: 100%;
+      min-height: 10rem;
+      resize: none;
+      padding: 1rem;
+      margin: auto;
+      box-shadow: none;
+    }
+  }
+
+  .btn-clipboard {
+    color: transparent;
+
+    background-image: url(img/copyclipboard-svgrepo-com-vector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    filter: invert(31%) sepia(4%) saturate(1120%) hue-rotate(169deg)
+      brightness(93%) contrast(91%);
+    border: none;
+    outline: none;
+
+    min-height: min(2.5rem);
+    min-width: min(2.5rem);
+    max-height: max(5rem);
+    max-width: max(5rem);
+    background-size: contain;
+    position: relative;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    transition: 5ms ease-in-out;
+
+    &:active {
+      filter: invert(15%) sepia(41%) saturate(3675%) hue-rotate(200deg)
+        brightness(90%) contrast(94%);
+    }
+  }
+
+  .advice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .advice-big {
+    text-align: center;
+    color: var(--gray500);
+
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    line-height: 120%;
+    font-size: 2.4rem;
+  }
+
+  .advice-small {
+    text-align: center;
+    color: var(--gray400);
+
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 1024px) {
+    .section2 {
+      grid-column: 1/3;
+      grid-row: 2/3;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .text-output {
+      margin: 1rem 5rem 1rem 5rem;
+      height: 50rem;
+    }
+
+    .section2 {
+      grid-column: 3/4;
+      grid-row: 1/4;
+    }
+
+    .text-encrypted-no {
+      display: inline;
+      min-height: min(30rem);
+      min-width: min(25rem);
+      background-image: url(img/muñeco-vector.svg);
+      background-color: transparent;
+      box-shadow: none;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: 500ms ease-in-out;
+    }
+
+    .text-encrypted-yes {
+      width: 92.5%;
+      max-height: 50rem;
+
+      & textarea {
+        min-height: 40rem;
+      }
+    }
+
+    .btn-clipboard {
+      display: none;
+    }
+
+    .button-copy-pc {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+
+      & button {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        height: 5.5rem;
+        width: 26rem;
+        border-radius: 2.5rem;
+        margin: 1rem;
+        transition: 350ms ease-in-out;
+
+        background-color: var(--gray100);
+        color: var(--darkblue300);
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+          font-size: 1.8rem;
+          background-color: var(--gray200);
+        }
+
+        &:active {
+          font-size: 3rem;
+          background-color: var(--gray300);
+        }
+      }
+    }
+
+    .btn-copy-pc,
+    .deactive {
+      display: block;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .text-output {
+      background-color: #343a404a;
+    }
+
+    .btn-clipboard {
+      filter: invert(89%) sepia(8%) saturate(1279%) hue-rotate(196deg)
+        brightness(106%) contrast(97%);
+
+      &:active {
+        filter: invert(75%) sepia(21%) saturate(355%) hue-rotate(191deg)
+          brightness(94%) contrast(83%);
+      }
+    }
+
+    .advice-big {
+      color: var(--darkblue100);
+    }
+
+    .advice-small {
+      color: var(--lightblue100);
+    }
+
+    .button-copy-pc {
+      & button {
+        background-color: var(--gray400);
+        color: var(--lightblue300);
+        font-size: 1.7rem;
+
+        &:hover {
+          font-size: 2rem;
+          background-color: var(--gray300);
+          color: var(--darkblue400);
+        }
+
+        &:active {
+          font-size: 1.4rem;
+          background-color: var(--gray500);
+          color: var(--lightblue200);
+        }
+      }
+    }
+
+    .text-encrypted-yes {
+      & textarea {
+        & #txt {
+          color: var(--lightblue400);
+        }
+      }
+    }
+  }
+</style>
