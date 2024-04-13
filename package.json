@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "test": "bun playwright test --config playwright.config.ts",
+    "test:e2e": "bun playwright test --config playwright.config.ts",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
