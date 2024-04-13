@@ -21,4 +21,5 @@ pnpm-debug.log*
 .DS_Store
 
 # tests reports
+playwright-report/
 test-results/
